@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <title>E-commerce Website
+    
+  </title>
+
+  <style>
+    nav{
+      background-color: rgb(93, 168, 221);
+    }
+    .one-edge-shadow {
+              box-shadow: 0 5px 2px -5px rgb(222, 181, 181);
+}
+.display-8{
+  font-weight: 200;
+  font-size: 30px;
+  color:teal-200;
+
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* HOT DEAL SECTION styles */
+#hot-deal {
+  background-color: #f4f4f4;
+  padding: 40px 0; /* Reduce padding for a smaller section */
+  text-align: center;
+}
+
+.hot-deal-countdown {
+  list-style: none;
+  padding: 0;
+  margin: 5px 0; /* Reduce margin for a smaller space */
+  display: flex;
+  justify-content: space-around;
+}
+
+.hot-deal-countdown li {
+  flex: 1;
+  text-align: center;
+}
+
+.hot-deal-countdown h3 {
+  font-size: 1.5em; /* Reduce font size for smaller text */
+  margin: 0;
+  color: #e74c3c;
+}
+
+.hot-deal-countdown span {
+  display: block;
+  font-size: 0.8em; /* Reduce font size for smaller text */
+  color: #333;
+}
+
+.hot-deal h2 {
+  font-size: 2em; /* Maintain a larger font size for the main heading */
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.hot-deal p {
+  font-size: 1em; /* Reduce font size for smaller text */
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 8px 16px; /* Reduce padding for a smaller button */
+  font-size: 1em; /* Reduce font size for smaller text */
+  text-decoration: none;
+  color: #fff;
+  background-color: #3498db;
+  border-radius: 5px;
+}
+
+
+  </style>
+</head>
+
+<body>
+
+
+  
+  <!-- navbar -->
+
+<nav class="one-edge-shadow
+  navbar navbar-light
+  sticky-top navbar 
+  navbar-expand-lg
+  text-white">
+    <a class="navbar-brand ms-3 text-dark " href="/">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+    <img src="https://www.freepnglogos.com/uploads/shopping-cart-png/shopping-cart-svg-png-icon-download-28.png" style="width:50px;height:50px,color text-light">E-Commerce</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/store">Store <span class="sr-only">(current)</span></a>
+        </li>
+
+          </ul>
+
+
+
+            
+      <ul class=" navbar-nav my-2 my-lg-0">
+
+        <li class="nav-item active">
+          <a class="nav-link" href="/cart">Cart 
+            <span class="badge badge-success">{{request.session.cart.keys|length}}</span>
+            <span class="sr-only">(current)</span></a>
+        </li>
+
+
+        
+
+        {% if request.session.customer %}
+        
+        <li class="nav-item active ">
+          <a class="nav-link" href="/orders">Orders<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active ">
+          <a class="nav-link" href="/logout">Logout<span class="sr-only">(current)</span></a>
+        </li>
+        {% else %}
+       
+        <li class="nav-item active">
+          <a class="nav-link" href="/signup">Signup<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/login">Login<span class="sr-only">(current)</span></a>
+        </li>
+        {% endif %}
+
+
+      </ul>
+
+
+    </div>
+  </nav>
+
+
+<!-- HOT DEAL SECTION -->
+<div id="hot-deal" class="section">
+  <!-- container -->
+  <div class="container">
+      <!-- row -->
+      <div class="row">
+          <div class="col-md-12">
+              <div class="hot-deal">
+                  <ul class="hot-deal-countdown">
+                      <li>
+                          <div>
+                              <h3>02</h3>
+                              <span>Days</span>
+                          </div>
+                      </li>
+                      <li>
+                          <div>
+                              <h3>10</h3>
+                              <span>Hours</span>
+                          </div>
+                      </li>
+                      <li>
+                          <div>
+                              <h3>34</h3>
+                              <span>Mins</span>
+                          </div>
+                      </li>
+                      <li>
+                          <div>
+                              <h3>60</h3>
+                              <span>Secs</span>
+                          </div>
+                      </li>
+                  </ul>
+                  <h2 class="text-uppercase">hot deal this week</h2>
+                  <p>New Collection Up to 50% OFF</p>
+                  <a class="primary-btn cta-btn" href="#">Shop now</a>
+              </div>
+          </div>
+      </div>
+      <!-- /row -->
+  </div>
+  <!-- /container -->
+</div>
+<!-- /HOT DEAL SECTION -->
+  
+  <!---->
+  {% block content %}{% endblock %}
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
